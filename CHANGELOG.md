@@ -4,10 +4,10 @@
 
 ### New Features
 
+* Use `ruby-3.4` as base for application
 * New `/help` command with bot description
 * Log any received command (known and unknown)
 * Add 100% branch coverage check in ci
-* Add `ruby-3.3` to CI
 * Add `yamllint` check in CI
 * Add `skip_if_refs_not_found` option for repo
 * Mount `config.json` via volume in docker-compose
@@ -17,6 +17,7 @@
   in CI
 * Add `faraday-retry` gem dependency, to fix warning
 * Add `dependabot` check for `GitHub Actions`
+* Use `vcr` gem in specs, greatly increase speed and relability
 
 ### Fixes
 
@@ -35,6 +36,7 @@
 * Remove support of ENV variable for github access init
 * Change config format to `json`
 * Use docker hub image in default compose
+* Add build packages to correctly install `bigdecimal` gem
 
 ## 1.0.0 (2021-01-22)
 

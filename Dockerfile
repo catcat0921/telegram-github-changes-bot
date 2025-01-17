@@ -1,8 +1,11 @@
-FROM ruby:3.3.0-alpine
+FROM ruby:3.4.1-alpine
 
 LABEL maintainer="shockwavenn@gmail.com"
 
-RUN gem update bundler
+RUN apk --no-cache add gcc \
+                       make \
+                       musl-dev && \
+    gem update bundler
 COPY . /root/telegram-github-changes-bot
 WORKDIR /root/telegram-github-changes-bot
 RUN bundle config set without 'development test' && \

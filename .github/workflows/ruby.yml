@@ -6,13 +6,13 @@ jobs:
     continue-on-error: ${{ matrix.allow-failures }}
     strategy:
       matrix:
-        ruby: ['3.3']
+        ruby: ['3.4']
         allow-failures: [false]
         include:
           - ruby: head
             allow-failures: true
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Ruby ${{ matrix.ruby }}
         uses: ruby/setup-ruby@v1
         with:
@@ -42,6 +42,6 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Default Dockerfile build
         run: docker build .
